@@ -1,0 +1,21 @@
+# command: helm -n development upgrade --install meilisearch meilisearch/meilisearch -f services/meilisearch/values-development.yaml
+ 
+persistence:
+  # -- Enable persistence using PVC
+  enabled: true
+  # -- PVC Access Mode
+  accessMode: ReadWriteOnce
+  # -- PVC Storage Class
+  storageClass: "gp2"
+
+  # size of the storage class
+  size: 10Gi
+
+# -- Resources allocation (Requests and Limits)
+resources:
+  limits:
+   cpu: 100m
+   memory: 128Mi
+  requests:
+   cpu: 100m
+   memory: 128Mi
